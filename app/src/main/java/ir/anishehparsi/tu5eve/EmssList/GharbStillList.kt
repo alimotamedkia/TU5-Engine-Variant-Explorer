@@ -8,15 +8,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.ramcosta.composedestinations.annotation.Destination
-import ir.anishehparsi.tu5eve.EmsUi.GharbStillUi
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import ir.anishehparsi.tu5eve.EmsUi.AecsUi
 import ir.anishehparsi.tu5eve.VariantsModel.variantInboxGharbStill
 
 @Destination
 @Composable
-fun GharbStillList(modifier: Modifier = Modifier) {
+fun GharbStillList(modifier: Modifier = Modifier, navigator: DestinationsNavigator) {
     LazyColumn(modifier = modifier.padding(horizontal = 16.dp)) {
         items(variantInboxGharbStill) {
-            GharbStillUi(item = it)
+            AecsUi(item = it, navigator = navigator)
             Spacer(modifier = Modifier.padding(vertical = 4.dp))
         }
     }

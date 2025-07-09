@@ -8,15 +8,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.ramcosta.composedestinations.annotation.Destination
-import ir.anishehparsi.tu5eve.EmsUi.SiemensUi
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import ir.anishehparsi.tu5eve.EmsUi.AecsUi
 import ir.anishehparsi.tu5eve.VariantsModel.variantInboxSiemens
 
 @Destination(start = true)
 @Composable
-fun SiemensList(modifier: Modifier = Modifier) {
+fun SiemensList(modifier: Modifier = Modifier, navigator: DestinationsNavigator) {
     LazyColumn(modifier = modifier.padding(horizontal = 16.dp)) {
         items(variantInboxSiemens) {
-            SiemensUi(item = it)
+            AecsUi(item = it, navigator = navigator)
             Spacer(modifier = Modifier.padding(vertical = 4.dp))
         }
     }
